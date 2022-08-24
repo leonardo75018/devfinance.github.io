@@ -27,7 +27,7 @@
                    <img src="./assets/income.svg" alt="income image">
                 </h3>
                 
-                <p>150€</p>
+                <p class="incomeDisplay">150€</p>
             </div>
 
             <div class="card">
@@ -35,7 +35,7 @@
                     <span>Sorties</span>
                     <img src="./assets/expense.svg" alt="expense image">
                  </h3>
-                <p>150€</p>
+                <p class="expenseDisplay">150€</p>
             </div>
 
             <div class="card solde">
@@ -43,7 +43,8 @@
                     <span>Total</span>
                     <img src="./assets/total.svg" alt="Total image">
                  </h3>
-                <p>150€</p>
+                <p class="totalDisplay">150€</p>
+                
             </div>
 
         </section>
@@ -58,45 +59,24 @@
                     <tr>
                         <th>Description</th>
                         <th>Valeur</th>
-                        <th>Dete</th>
+                        <th>Date</th>
                         <th>Effacer</th>
                         
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="description">Électricité</td>
-                        <td class="expense">-40€</td>
-                        <td class="date">12/02/2022</td>
-                        <td >
-                            <img src="./assets/minus.svg" alt="remove transactions">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Loyer</td>
-                        <td  class="expense">-1000€</td>
-                        <td class="date">11/03/2022</td>
-                        <td >
-                            <img src="./assets/minus.svg" alt="remove transactions">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Création site</td>
-                        <td class="income">5000€</td>
-                        <td class="date">12/01/2022</td>
-                        <td >
-                            <img src="./assets/minus.svg" alt="remove transactions">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Création site</td>
-                        <td class="income">7000€</td>
-                        <td class="date">12/01/2022</td>
-                        <td >
-                            <img src="./assets/minus.svg" alt="remove transactions">
-                        </td>
-                    </tr>
-                </tbody>
+                    
+                </tbody> 
+
+                <template id="td-template">
+                    <td class="description">Création site</td>
+                    <td class="income">7000€</td>
+                    <td class="date">12/01/2022</td>
+                    <td >
+                        <img src="./assets/minus.svg"  alt="remove transactions" >
+                    </td>
+                </template>
+
             </table>
         </section>
     </main>
