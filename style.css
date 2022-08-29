@@ -145,6 +145,10 @@ header{
 
 }
 
+.total-icon{
+    visibility: hidden;
+}
+
 .card h3{
     font-weight: normal;
     font-size: 1rem;
@@ -245,6 +249,8 @@ td.expense{
 
     opacity: 0;
     visibility: hidden;
+
+    z-index: 9999;
   
 }
 
@@ -257,6 +263,9 @@ td.expense{
 .modal{
     background: #F0F2F5;
     padding: 2.4rem;
+
+    position: relative;
+    z-index: 1;
 }
 
 

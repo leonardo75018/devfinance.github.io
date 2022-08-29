@@ -6,36 +6,21 @@ const closeModal = () => modal.classList.remove("active");
 
 
 
+const Storage = {
+    get() {
+        return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
+    },
+
+    set(transactions) {
+        localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions))
+    }
+}
 
 
 const Transation = {
-    all :  [
-        {
-            id: 1,
-            description : "Electricité",
-            amount : 7000, 
-            date : "23/01/2021"
-        },
-        {
-            id: 2,
-            description : "Loyer",
-            amount : -50000, 
-            date : "23/01/2021"
-        },
-        {
-            id: 3,
-            description : "Création site",
-            amount : 300000, 
-            date : "23/01/2021"
-        },
-        {
-            id: 4,
-            description : "Création d'une App",
-            amount : 500000, 
-            date : "23/01/2021"
-        }
-    ],
 
+    all: Storage.get(),
+    
     add(transaction){
         Transation.all.push(transaction)  
         App.reload()
@@ -210,11 +195,13 @@ Form.submit()
 
 const App = {
     init(){
-        Transation.all.forEach((transaction,index) =>{
-            DOM.addTransaction(transaction,index) 
-        })
-
+        Transation.all.forEach(DOM.addTransaction)
         DOM.updateBalance()
+
+        Storage.set(Transation.all)
+
+   
+
     },
     reload(){
         DOM.clearTransactions()
