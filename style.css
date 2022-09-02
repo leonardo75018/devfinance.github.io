@@ -332,3 +332,9 @@ footer{
     }
 
 }
+
+@media (max-width: 600px) {
+    .modal{
+        width: 95%;
+    }
+  }
